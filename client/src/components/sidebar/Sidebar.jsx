@@ -7,7 +7,7 @@ function Sidebar() {
         <span className="sidebarTitle">
           About Me
         </span>
-        <img src="https://images.ctfassets.net/hrltx12pl8hq/7yQR5uJhwEkRfjwMFJ7bUK/dc52a0913e8ff8b5c276177890eb0129/offset_comp_772626-opt.jpg?fit=fill&w=800&h=300" alt="" />
+        <img src="./images/team-v1-5.jpg" alt="" />
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim architecto, nulla dolorum odio dolorem
           iure laborum veritatis aliquid reiciendis quisquam vel et suscipit a
           lias iste magnam pariatur ab hic Lorem ipsum dolor sit amet consectetur adipisicing elit.
