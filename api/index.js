@@ -29,10 +29,10 @@ const connectDB = async () => {
 connectDB();
 
 /*************************************************************
- * $$$$$$$$$$$$$ M U L T E R $$$$$$$$$$$$$$$$$$$$$$$$
+ * $$$$$$$$$$$$$$$$$$$$$ M U L T E R $$$$$$$$$$$$$$$$$$$$$$$$
 **************************************************************/
-/******************
-Storing image
+/*******************
+Storing Image
 ********************/
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -42,9 +42,8 @@ const storage = multer.diskStorage({
     cb(null, req.body.name);
   },
 });
-/**************** 
- * **
-Uploading image
+/******************* 
+Uploading Image
 ********************/
 const upload = multer({ storage: storage });
 // Uploading just one image,hence single method
@@ -52,7 +51,7 @@ app.post('/api/uploads/', upload.single('file'), (req, res) => {
   res.status(200).json('File Upload Successful');
 });
 /*************************************************************
- * $$$$$$$$$$$$$ M U L T E R $$$$$$$$$$$$$$$$$$$$$$$$
+ * $$$$$$$$$$$$$$$$$$$$$ M U L T E R $$$$$$$$$$$$$$$$$$$$$$$$
 **************************************************************/
 
 /******************
@@ -64,5 +63,5 @@ app.use('/api/posts', postRoute);
 app.use('/api/categories', categoryRoute);
 
 // Port Listening
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, console.log(`Server is running on port ${PORT}`));
