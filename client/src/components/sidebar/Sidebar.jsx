@@ -1,11 +1,21 @@
-import './sidebar.css'
+import { useEffect, useState } from 'react'
+import './sidebar.css';
+import axios from 'axios';
 
 function Sidebar() {
+  const [cats, setCats] = useState([]);
+  useEffect(() => {
+    const getCats = async () => {
+      const res = await axios.get('/categories');
+      setCats(res.data);
+    }
+    getCats();
+  }, [])
   return (
     <div className='sidebar'>
       <div className="sidebarItem">
         <span className="sidebarTitle">
-          About Me
+          About The Author
         </span>
         <img src="./images/team-v1-5.jpg" alt="" />
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim architecto, nulla dolorum odio dolorem
@@ -16,13 +26,12 @@ function Sidebar() {
       <div className="sidebarItem">
         <span className="sidebarTitle">Categories</span>
         <ul className="sidebarList">
-          <li className="sidebarListItem">Life</li>
-          <li className="sidebarListItem">Music</li>
-          <li className="sidebarListItem">Sport</li>
-          <li className="sidebarListItem">Tech</li>
-          <li className="sidebarListItem">Cinema</li>
-          <li className="sidebarListItem">Style</li>
+          {/* Fetching posts according to Categories from database */}
+          {cats.map((cat) => (
+            <li className="sidebarListItem">{cat.name}</li>
+          ))};
         </ul>
+        {/* End of fectch */}
       </div>
       <div className="sidebarItem">
         <span className="sidebarTitle">Follow Us</span>

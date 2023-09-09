@@ -8,6 +8,6 @@ function Posts({ posts }) {
         <Post post={p} />
       ))}
     </div>
-  )
+  );
 }
 export default Posts
