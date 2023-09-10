@@ -3,7 +3,6 @@ import './posts.css'
 
 function Posts({ posts }) {
   return (
-    //  console.log(typeof [posts]==="");
     <div className='posts'>
       {posts.map((p) => (
         <Post post={p} />
