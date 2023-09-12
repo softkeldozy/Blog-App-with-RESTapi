@@ -23,4 +23,4 @@ function Post({ post }) {
   );
 }
 
-export default Post;
+export default Post; 

@@ -16,7 +16,7 @@ function Home() {
       const res = await axios.get('/posts' + search);
       setPosts(res.data)
     }
-    fetchPosts()
+    fetchPosts();
   }, [search])
   return (
     <>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './sidebar.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Sidebar() {
   const [cats, setCats] = useState([]);
@@ -28,7 +29,10 @@ function Sidebar() {
         <ul className="sidebarList">
           {/* Fetching posts according to Categories from database */}
           {cats.map((cat) => (
-            <li className="sidebarListItem">{cat.name}</li>
+            <Link to={`/?cat=${cat.name}`} className='link'>
+              <li className="sidebarListItem">{cat.name}</li>
+            </Link>
+
           ))};
         </ul>
         {/* End of fectch */}

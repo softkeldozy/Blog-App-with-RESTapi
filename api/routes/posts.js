@@ -91,7 +91,7 @@ router.get('/', async (req, res) => {
     else { posts = await Post.find(); }
     res.status(200).json(posts);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ message: 'Server error!!! Failed to fetch' });
   }
 });
 module.exports = router
