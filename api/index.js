@@ -6,12 +6,15 @@ const userRoute = require('./routes/users');
 const postRoute = require('./routes/posts');
 const categoryRoute = require('./routes/categories');
 const multer = require('multer');
+const path = require('path');
 
 
 const app = express();
 dotenv.config();
 // Enabling the app to send onjects in json format
 app.use(express.json());
+// for posting of images during article creation
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 /******************
 Database Connection
