@@ -5,6 +5,8 @@ import { Context } from '../../context/context';
 
 function TopBar() {
   const { user, dispatch } = useContext(Context);
+  const PF = 'http://localhost:5000/images/'
+
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -39,7 +41,7 @@ function TopBar() {
         </ul>
       </div>
       <div className="topRight">
-        {user ? (<Link to='/settings'><img className="topImg" src={user.profilePic} alt="" /></Link>
+        {user ? (<Link to='/settings'><img className="topImg" src={PF + user.profilePic} alt="" /></Link>
         ) : (
           //MULTIPLE COMPONENTS SHOULD ALWAYS BE WRAPPED INSIDE A FRAGMENT {<> </>}
           <ul className="topList">
