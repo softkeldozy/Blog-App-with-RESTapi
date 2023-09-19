@@ -39,7 +39,7 @@ function TopBar() {
         </ul>
       </div>
       <div className="topRight">
-        {user ? (<img className="topImg" src={user.profilePic} alt="" />
+        {user ? (<Link to='/settings'><img className="topImg" src={user.profilePic} alt="" /></Link>
         ) : (
           //MULTIPLE COMPONENTS SHOULD ALWAYS BE WRAPPED INSIDE A FRAGMENT {<> </>}
           <ul className="topList">
